@@ -1,0 +1,40 @@
+:root{
+    --sans: "aktiv-grotesk", sans-serif;
+    --sub-100: #913a13;
+    --sub-200: #341208;
+    --light-100: #eeeeee;
+    --light-200:#a8a8a8;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    font-family: var(--sans);
+}
+
+.wrapper{
+    max-width:1790px;
+    margin-inline:auto;
+}
+
+#hero-section{
+    min-height: 100svh;
+    background-color: var(--light-200);
+    position:relative;
+    overflow: hidden;
+    .light-background{
+        position:absolute;
+        width: 50svw;
+        aspect-ratio: 1;
+        background: var(--light-100);
+        top: 50%;
+        left: 50%;
+        transform:translate(-50%,-50%);
+        border-radius: 50%;
+        filter: blur(50px);
+        opacity: 0.5;
+    }
+}

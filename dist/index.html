@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/ger1ber.css">
+    <link rel="stylesheet" href="./_Public/Css/App.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <section id="hero-section">
+            <div class="wrapper">
+                <div class="content">
+                    <h1>
+                        <span class="top">
+                            Ich heiße Ahmed LEMSSIAH & bin
+                        </span>
+                        <span class="main">
+                            Webdesigner
+                        </span>
+                        <span class="main">
+                            Webentwickler
+                        </span>
+                    </h1>
+                </div>
+            </div>
+            <div class="light-background"></div>
+        </section>
+    </main>
+    <!-- <script type="module" src="./_Public/Js/Function.js"></script> -->
+    <script src="./_Public/Js/App.js"></script>
+
+
+    <script>
+        const lightBackground = document.querySelector(".light-background")
+
+        let mouse = {
+            x:undefined,
+            y:undefined
+        }
+
+        const lightBackgroundBox = lightBackground.getBoundingClientRect()
+        const lightx = lightBackgroundBox.left
+        const lighty = lightBackgroundBox.top
+        const lightw  = lightBackgroundBox.width
+        const lighth = lightBackgroundBox.height
+
+        document.addEventListener("mousemove", (e) => {
+            window.setTimeout(() => {
+                lightBackground.style.cssText = `
+                      left:${e.pageX}px;
+                      top: ${e.pageY}px;
+                      `
+            },100)
+        })
+
+
+
+
+    </script>
+</body>
+</html>

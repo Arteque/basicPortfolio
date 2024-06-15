@@ -46,7 +46,6 @@ img {
 }
 
 #hero-section {
-  min-height: 100svh;
   background: rgb(238, 238, 238);
   background: radial-gradient(circle, rgb(238, 238, 238) 0%, rgb(168, 168, 168) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eeeeee",endColorstr="#a8a8a8",GradientType=1);
@@ -55,7 +54,7 @@ img {
 }
 #hero-section .light-background {
   position: absolute;
-  width: 504px;
+  width: 200px;
   aspect-ratio: 1;
   background: radial-gradient(rgba(255, 255, 255, 0.5019607843) 0%, transparent 50%);
   top: 50%;
@@ -63,16 +62,20 @@ img {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   border-radius: 50%;
-  opacity: 0.49;
+  opacity: 0.6;
   mix-blend-mode: plus-lighter;
   z-index: 100;
 }
-#hero-section .tools {
+#hero-section .tools-container {
   z-index: 50;
-}
-#hero-section .tools img {
   position: absolute;
+}
+#hero-section .tools-container img {
+  position: absolute;
+  bottom: -500px;
   width: 25px;
+  left: 50%;
+  z-index: 0;
 }
 #hero-section .wrapper {
   width: 100%;

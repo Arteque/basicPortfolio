@@ -136,15 +136,41 @@
         const tools = document.querySelector(".tools-container")
         const toolsItems = [...tools.querySelectorAll("img")]
 
-        toolsItems.forEach(item => {
-            item.style.cssText = `scale:${Math.random() * 2 + 1};
+        const imgScale = () => {return Math.random() * 3 + 1}
+        let imgScaleTransition = () => {return Math.floor(Math.random() * 20 + 1)} 
+        const shadowX = imgScale()
+        const shadowY = Math.floor(Math.random()*10)
+        const shadowZ = 0 + imgScale()
+        const imgBlur = imgScale() / 5
+        const imgZIndex = imgScale()
+
+
+        function setup(item){
+            item.style.cssText = `transition: all ${imgScaleTransition()}s cubic-bezier(0, 1.2, 0.5, 1);
+                                  transition-delay:1s;
+                                  z-index:${Math.floor(imgScale()) * 100};
+                                  rotate: ${Math.floor(Math.random() * 360 - 100)}deg;
+                                  scale:${Math.floor(imgScale())};
                                   left:${Math.random() * window.innerWidth}px;
-                                  bottom:${Math.random() * window.innerHeight}px;
-                                  filter:blur(${Math.random() * 5 - 2}px) 
-                                        drop-shadow(${Math.floor(Math.random()*10)}px ${Math.floor(Math.random()*10)}px ${Math.floor(Math.random()*20)}px #000000${Math.floor(Math.random()*60 - 20)});
+                                  bottom:${Math.random() * window.innerHeight + 100}px;
+                                  filter: drop-shadow(${shadowX * 2}px ${shadowY * 2}px ${shadowZ * 2}px #00000080) blur(${imgBlur}px);
+                                //   opacity:1;
 
             `
+        }
+
+        toolsItems.forEach(item => {
+
+            setup(item)
+
+            window.setInterval(() => {
+                imgScaleTransition = () => {return 10}
+                setup(item)
+            },10000)
         })
+
+
+       
 
     </script>
 </body>

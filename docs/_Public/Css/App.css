@@ -68,14 +68,118 @@ img {
 }
 #hero-section .tools-container {
   z-index: 50;
-  position: absolute;
 }
-#hero-section .tools-container img {
+#hero-section .tools-container li {
   position: absolute;
-  bottom: -500px;
-  width: 25px;
-  left: 50%;
-  z-index: 0;
+  list-style: none;
+}
+#hero-section .tools-container li:nth-of-type(1) {
+  bottom: 15svh;
+  right: 10svw;
+  width: 50px;
+  rotate: -45deg;
+  scale: 1;
+  -webkit-filter: blur(2px) drop-shadow(-40px 20px 3px rgba(0, 0, 0, 0.1882352941));
+          filter: blur(2px) drop-shadow(-40px 20px 3px rgba(0, 0, 0, 0.1882352941));
+}
+#hero-section .tools-container li:nth-of-type(2) {
+  bottom: 10svh;
+  left: 10svw;
+  width: 50px;
+  rotate: 10deg;
+  scale: 2;
+  -webkit-filter: blur(2.2px) drop-shadow(50px 20px 3px rgba(0, 0, 0, 0.1882352941));
+          filter: blur(2.2px) drop-shadow(50px 20px 3px rgba(0, 0, 0, 0.1882352941));
+}
+#hero-section .tools-container li:nth-of-type(3) {
+  bottom: 25svh;
+  left: 5svw;
+  width: 50px;
+  rotate: -25deg;
+  scale: 1.5;
+  -webkit-filter: blur(1.2px) drop-shadow(20px 10px 3px rgba(0, 0, 0, 0.1882352941));
+          filter: blur(1.2px) drop-shadow(20px 10px 3px rgba(0, 0, 0, 0.1882352941));
+}
+#hero-section .tools-container li:nth-of-type(4) {
+  bottom: -2svh;
+  left: 50svw;
+  width: 50px;
+  rotate: 25deg;
+  scale: 1.6;
+  -webkit-filter: blur(1.5px) drop-shadow(30px 20px 3px rgba(0, 0, 0, 0.1882352941));
+          filter: blur(1.5px) drop-shadow(30px 20px 3px rgba(0, 0, 0, 0.1882352941));
+}
+#hero-section .tools-container li:nth-of-type(5) {
+  bottom: 0;
+  right: 10svw;
+  width: 50px;
+  rotate: 15deg;
+  scale: 1;
+  -webkit-filter: blur(2px) drop-shadow(30px 20px 3px rgba(0, 0, 0, 0.1882352941));
+          filter: blur(2px) drop-shadow(30px 20px 3px rgba(0, 0, 0, 0.1882352941));
+}
+#hero-section .tools-container li:nth-of-type(6) {
+  top: 55svh;
+  left: 45svw;
+  width: 50px;
+  rotate: -40deg;
+  scale: 1;
+  -webkit-filter: blur(0.8px) drop-shadow(20px 20px 4px rgba(0, 0, 0, 0.1882352941));
+          filter: blur(0.8px) drop-shadow(20px 20px 4px rgba(0, 0, 0, 0.1882352941));
+}
+#hero-section .tools-container li:nth-of-type(7) {
+  bottom: 30svh;
+  right: 10svw;
+  width: 50px;
+  rotate: 25deg;
+  scale: 2;
+  -webkit-filter: blur(1.2px) drop-shadow(-20px 20px 4px rgba(0, 0, 0, 0.1254901961));
+          filter: blur(1.2px) drop-shadow(-20px 20px 4px rgba(0, 0, 0, 0.1254901961));
+}
+#hero-section .tools-container li:nth-of-type(8) {
+  top: 60svh;
+  left: 20svw;
+  width: 50px;
+  rotate: -10deg;
+  scale: 1;
+  -webkit-filter: blur(1.5px) drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.3137254902));
+          filter: blur(1.5px) drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.3137254902));
+}
+#hero-section .tools-container li:nth-of-type(9) {
+  top: 35svh;
+  left: 0svw;
+  width: 50px;
+  rotate: -10deg;
+  scale: 1.5;
+  -webkit-filter: blur(0.5px) drop-shadow(20px -5px 5px rgba(0, 0, 0, 0.3137254902));
+          filter: blur(0.5px) drop-shadow(20px -5px 5px rgba(0, 0, 0, 0.3137254902));
+}
+#hero-section .tools-container li:nth-of-type(10) {
+  top: 35svh;
+  right: 2svw;
+  width: 50px;
+  rotate: 24deg;
+  scale: 0.9;
+  -webkit-filter: blur(1px) drop-shadow(-20px -5px 5px rgba(0, 0, 0, 0.3137254902));
+          filter: blur(1px) drop-shadow(-20px -5px 5px rgba(0, 0, 0, 0.3137254902));
+}
+#hero-section .tools-container li:nth-of-type(11) {
+  top: 35svh;
+  right: 25svw;
+  width: 50px;
+  rotate: -10deg;
+  scale: 1;
+  -webkit-filter: blur(0.8px) drop-shadow(10px 5px 5px rgba(0, 0, 0, 0.3137254902));
+          filter: blur(0.8px) drop-shadow(10px 5px 5px rgba(0, 0, 0, 0.3137254902));
+}
+#hero-section .tools-container li:nth-of-type(12) {
+  top: 33svh;
+  right: 50svw;
+  width: 50px;
+  rotate: 25deg;
+  scale: 1;
+  -webkit-filter: blur(0.8px) drop-shadow(10px 5px 5px rgba(0, 0, 0, 0.3137254902));
+          filter: blur(0.8px) drop-shadow(10px 5px 5px rgba(0, 0, 0, 0.3137254902));
 }
 #hero-section .wrapper {
   width: 100%;
@@ -111,7 +215,7 @@ img {
   display: block;
   text-transform: uppercase;
   color: var(--sub-100);
-  font-size: 35px;
+  font-size: 2.5rem;
   word-break: break-all;
   width: 100%;
 }/*# sourceMappingURL=App.css.map */

@@ -1,15 +1,4 @@
-:root{
-    --heading: "aktiv-grotesk", sans-serif;
-    --text: "pt-sans-pro", sans-serif;
-    --sub-100: #913a13;
-    --sub-200: #341208;
-    --call-100:#ffe600;
-    --call-200:#d3c01a;
-    --call-300:#7e7528;
-    --light-100: #eeeeee;
-    --light-200:#a8a8a8;
-    --light-300:#686868;
-}
+@use "./assets/Vars";
 
 *{
     margin: 0;
@@ -29,14 +18,68 @@ img{
     display: block;
     width: 100%;
 }
+ul[class]{
+    list-style:none;
+}
 .wrapper{
+    padding-inline: 1rem;
     max-width:1790px;
     margin-inline:auto;
 }
+.light-background{
+    position:absolute;
+    width: 400px;
+    aspect-ratio: 1;
+    background: radial-gradient(#ffffff99 0%, transparent 50%);
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    border-radius: 50%;
+    // opacity: 0.6;
+    mix-blend-mode: overlay;
+    z-index: 100;
+    pointer-events: none;
+    z-index: 999999999999;
+}
 #main-header{
     position:absolute;
+    width:100%;
+    height: 100%;
+    pointer-events: none;
     z-index: 999;
-    display: none;
+    overflow: hidden;
+    .wrapper{
+        display: flex;
+        align-items:center;
+        justify-content:space-between;
+        .main-nav{
+            position:absolute;
+            top: 10svh;
+            background-color: var(--light-200);
+            left: 20svw;
+            right: 0;
+            min-height: 50svh;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: center;
+            pointer-events: all;
+            a{
+                font-size: 3rem;
+                font-weight: 900;
+                font-family: var(--heading);
+                text-decoration: none;
+                color:var(--light-300);
+                text-transform: uppercase;
+                padding-block: 1rem;
+                display: block;
+                transition: all 0.5s;
+                &:hover:has(a:not(a:hover)){
+                   filter: blur(5px);
+                }
+            }
+        }
+    }
 }
 #hero-section{
     background: rgb(238,238,238);
@@ -46,143 +89,15 @@ img{
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eeeeee",endColorstr="#a8a8a8",GradientType=1);
     position:relative;
     overflow: hidden;
-    .light-background{
-        position:absolute;
-        width: 200px;
-        aspect-ratio: 1;
-        background: radial-gradient(#ffffff80 0%, transparent 50%);
-        top: 50%;
-        left: 50%;
-        transform:translate(-50%,-50%);
-        border-radius: 50%;
-        opacity: 0.6;
-        mix-blend-mode: plus-lighter;
-        z-index: 100;
-    }
-    .tools-container{
-        z-index: 50;
-        // position:absolute;
-        li{
-            position: absolute;
-            list-style: none;
-            //Photoshop
-            &:nth-of-type(1){
-                bottom: 15svh;
-                right:10svw;
-                width: 50px;
-                rotate:-45deg;
-                scale: 1;
-                filter:blur(2px) drop-shadow(-40px 20px 3px #00000030);
-            }
-            //AI
-            &:nth-of-type(2){
-                bottom: 10svh;
-                left:10svw;
-                width: 50px;
-                rotate:10deg;
-                scale: 2;
-                filter:blur(2.2px) drop-shadow(50px 20px 3px #00000030);
-            }
-            //XD
-            &:nth-of-type(3){
-                bottom: 25svh;
-                left:5svw;
-                width: 50px;
-                rotate:-25deg;
-                scale: 1.5;
-                filter:blur(1.2px) drop-shadow(20px 10px 3px #00000030);
-            }
-            //id
-            &:nth-of-type(4){
-                bottom: -2svh;
-                left:50svw;
-                width: 50px;
-                rotate:25deg;
-                scale: 1.6;
-                filter:blur(1.5px) drop-shadow(30px 20px 3px #00000030);
-            }
-            //html
-            &:nth-of-type(5){
-                bottom: 0;
-                right:10svw;
-                width: 50px;
-                rotate:15deg;
-                scale: 1;
-                filter:blur(2px) drop-shadow(30px 20px 3px #00000030);
-            }
-            //css
-            &:nth-of-type(6){
-                top: 55svh;
-                left:45svw;
-                width: 50px;
-                rotate:-40deg;
-                scale: 1;
-                filter:blur(.8px) drop-shadow(20px 20px 4px #00000030);
-            }
-            //js
-            &:nth-of-type(7){
-                bottom: 30svh;
-                right:10svw;
-                width: 50px;
-                rotate:25deg;
-                scale: 2;
-                filter:blur(1.2px) drop-shadow(-20px 20px 4px #00000020);
-            }
-            //github
-            &:nth-of-type(8){
-                top: 60svh;
-                left:20svw;
-                width: 50px;
-                rotate:-10deg;
-                scale: 1;
-                filter:blur(1.5px) drop-shadow(2px 2px 1px #00000050);
-            }
-            //de
-            &:nth-of-type(9){
-                top: 35svh;
-                left:0svw;
-                width: 50px;
-                rotate:-10deg;
-                scale: 1.5;
-                filter:blur(0.5px) drop-shadow(20px -5px 5px #00000050);
-            }
-            //eng
-            &:nth-of-type(10){
-                top: 35svh;
-                right:2svw;
-                width: 50px;
-                rotate:24deg;
-                scale: 0.9;
-                filter:blur(1px) drop-shadow(-20px -5px 5px #00000050);
-            }
-            //mar
-            &:nth-of-type(11){
-                top: 35svh;
-                right:25svw;
-                width: 50px;
-                rotate:-10deg;
-                scale: 1;
-                filter:blur(0.8px) drop-shadow(10px 5px 5px #00000050);
-            }
-            //fr
-            &:nth-of-type(12){
-                top: 33svh;
-                right:50svw;
-                width: 50px;
-                rotate:25deg;
-                scale: 1;
-                filter:blur(0.8px) drop-shadow(10px 5px 5px #00000050);
-            }
-            
-        }
-    }
+    
+    
     .wrapper{
-        width: 100%;
         min-height: 100svh;
         position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
+        padding-inline: 0;
         .media{
             position: absolute;
             bottom: 0;
@@ -204,6 +119,119 @@ img{
                 font-size:2.5rem;
                 word-break: break-all;
                 width: 100%;
+            }
+        }
+    }
+
+    .tools-container{
+        z-index: 50;
+        // position:absolute;
+        li{
+            position: absolute;
+            list-style: none;
+            width:30px;
+            //Photoshop
+            transition: all 0.3s;
+            
+            &:nth-of-type(1){
+                bottom: 15svh;
+                right:10svw;
+                rotate:-45deg;
+                scale: 1;
+                filter:blur(2px) drop-shadow(-40px 20px 3px #00000030);
+            }
+            //AI
+            &:nth-of-type(2){
+                bottom: 10svh;
+                left:10svw;
+                rotate:10deg;
+                scale: 2;
+                filter:blur(2.2px) drop-shadow(50px 20px 3px #00000030);
+            }
+            //XD
+            &:nth-of-type(3){
+                bottom: 25svh;
+                left:5svw;
+                rotate:-25deg;
+                scale: 1.5;
+                filter:blur(1.2px) drop-shadow(20px 10px 3px #00000030);
+            }
+            //id
+            &:nth-of-type(4){
+                bottom: -2svh;
+                left:50svw;
+                rotate:25deg;
+                scale: 1.6;
+                filter:blur(1.5px) drop-shadow(30px 20px 3px #00000030);
+            }
+            //html
+            &:nth-of-type(5){
+                bottom: 0;
+                right:10svw;
+                rotate:15deg;
+                scale: 1;
+                filter:blur(2px) drop-shadow(30px 20px 3px #00000030);
+            }
+            //css
+            &:nth-of-type(6){
+                top: 55svh;
+                left:45svw;
+                rotate:-40deg;
+                scale: 1;
+                filter:blur(.8px) drop-shadow(20px 20px 4px #00000030);
+            }
+            //js
+            &:nth-of-type(7){
+                bottom: 30svh;
+                right:10svw;
+                rotate:25deg;
+                scale: 2;
+                filter:blur(1.2px) drop-shadow(-20px 20px 4px #00000020);
+            }
+            //github
+            /*
+            &:nth-of-type(8){
+                top: 60svh;
+                left:20svw;
+                rotate:-10deg;
+                scale: 1;
+                filter:blur(1.5px) drop-shadow(2px 2px 1px #00000050);
+            }
+                */
+            //de
+            &:nth-of-type(9){
+                top: 35svh;
+                left:0svw;
+                rotate:-10deg;
+                scale: 1.5;
+                filter:blur(0.5px) drop-shadow(20px -5px 5px #00000050);
+            }
+            //eng
+            &:nth-of-type(10){
+                top: 35svh;
+                right:2svw;
+                rotate:24deg;
+                scale: 0.9;
+                filter:blur(1px) drop-shadow(-20px -5px 5px #00000050);
+            }
+            //mar
+            &:nth-of-type(11){
+                top: 35svh;
+                right:25svw;
+                rotate:-10deg;
+                scale: 1;
+                filter:blur(0.8px) drop-shadow(10px 5px 5px #00000050);
+            }
+            //fr
+            &:nth-of-type(12){
+                top: 33svh;
+                right:50svw;
+                rotate:25deg;
+                scale: 1;
+                filter:blur(0.8px) drop-shadow(10px 5px 5px #00000050);
+            }
+            &:hover{
+                filter:blur(0px) drop-shadow(0px 0px 3px #00000080);
             }
         }
     }

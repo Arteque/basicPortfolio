@@ -144,10 +144,9 @@ ul[class] {
   width: 100%;
 }
 #main-header .wrapper .lang-container {
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  position: fixed;
+  left: 0;
+  bottom: 0;
   border: 1px solid var(--light-200);
   border-radius: 5px;
   display: -webkit-box;
@@ -157,7 +156,26 @@ ul[class] {
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 3px;
   gap: 5px;
+}
+#main-header .wrapper .lang-container .lang-item {
+  display: none;
+}
+#main-header .wrapper .lang-container .lang-item.current {
+  display: block;
+}
+#main-header .wrapper .lang-container svg {
+  width: 15px;
+  rotate: 180deg;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 #main-header .wrapper .lang-container svg path {
   fill: var(--light-300) !important;

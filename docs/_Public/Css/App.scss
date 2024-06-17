@@ -108,15 +108,27 @@ ul[class]{
         }
 
         .lang-container{
-            position:absolute;
-            left: 50%;
-            transform:translateX(-50%);
+            position:fixed;
+            left: 0;
+            bottom: 0;
             border: 1px solid var(--light-200);
             border-radius: 5px;
             display: flex;
             flex-direction:row-reverse;
+            justify-content: center;
+            align-items:center;
+            padding: 3px;
             gap: 5px;
+            .lang-item{
+                display: none;
+            }
+            .lang-item.current{
+                display: block;
+            }
             svg{
+                width: 15px;
+                rotate: 180deg;
+                transition: all 0.5s;
                path{
                     fill: var(--light-300) !important;
                }

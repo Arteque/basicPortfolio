@@ -227,7 +227,7 @@ body[data-menu="menu-open"]{
         li{
             position: absolute;
             list-style: none;
-            width:30px;
+            width:40px;
             //Photoshop
             transition: all 0.3s;
             
@@ -286,48 +286,50 @@ body[data-menu="menu-open"]{
                 scale: 2;
                 // filter:blur(1.2px) drop-shadow(-20px 20px 4px #00000020);
             }
-            //github
-            /*
+            //de
+           
             &:nth-of-type(8){
-                top: 60svh;
-                left:20svw;
-                rotate:-10deg;
-                scale: 1;
+                top: 30svh;
+                left:40svw;
+                rotate:15deg;
+                scale: 1.5;
                 // filter:blur(1.5px) drop-shadow(2px 2px 1px #00000050);
             }
-                */
-            //de
+           
+            //eng
             &:nth-of-type(9){
-                top: 35svh;
-                left:0svw;
+                top: 30svh;
+                left:10svw;
                 rotate:-10deg;
                 scale: 1.5;
                 // filter:blur(0.5px) drop-shadow(20px -5px 5px #00000050);
             }
-            //eng
+            //mar
             &:nth-of-type(10){
-                top: 35svh;
+                top: 30svh;
                 right:2svw;
                 rotate:24deg;
-                scale: 0.9;
+                // scale: 1;
                 // filter:blur(1px) drop-shadow(-20px -5px 5px #00000050);
             }
-            //mar
+            //fr
             &:nth-of-type(11){
                 top: 35svh;
-                right:25svw;
+                right:20svw;
                 rotate:-10deg;
                 scale: 1;
                 // filter:blur(0.8px) drop-shadow(10px 5px 5px #00000050);
             }
             //fr
+            /*
             &:nth-of-type(12){
-                top: 33svh;
-                right:50svw;
+                top: 50svh;
+                right:-10svw;
                 rotate:25deg;
                 scale: 1;
                 // filter:blur(0.8px) drop-shadow(10px 5px 5px #00000050);
             }
+                */
             &:hover{
                 // filter:blur(0px) drop-shadow(0px 0px 3px #00000080);
             }

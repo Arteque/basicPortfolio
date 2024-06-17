@@ -268,16 +268,16 @@ body[data-menu=menu-open] #main-header .burger-container span:nth-of-type(3) {
 #hero-section .tools-container li {
   position: absolute;
   list-style: none;
-  width: 30px;
+  width: 40px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   /*
-  &:nth-of-type(8){
-      top: 60svh;
-      left:20svw;
-      rotate:-10deg;
+  &:nth-of-type(12){
+      top: 50svh;
+      right:-10svw;
+      rotate:25deg;
       scale: 1;
-      // filter:blur(1.5px) drop-shadow(2px 2px 1px #00000050);
+      // filter:blur(0.8px) drop-shadow(10px 5px 5px #00000050);
   }
       */
 }
@@ -323,27 +323,26 @@ body[data-menu=menu-open] #main-header .burger-container span:nth-of-type(3) {
   rotate: 25deg;
   scale: 2;
 }
+#hero-section .tools-container li:nth-of-type(8) {
+  top: 30svh;
+  left: 40svw;
+  rotate: 15deg;
+  scale: 1.5;
+}
 #hero-section .tools-container li:nth-of-type(9) {
-  top: 35svh;
-  left: 0svw;
+  top: 30svh;
+  left: 10svw;
   rotate: -10deg;
   scale: 1.5;
 }
 #hero-section .tools-container li:nth-of-type(10) {
-  top: 35svh;
+  top: 30svh;
   right: 2svw;
   rotate: 24deg;
-  scale: 0.9;
 }
 #hero-section .tools-container li:nth-of-type(11) {
   top: 35svh;
-  right: 25svw;
+  right: 20svw;
   rotate: -10deg;
-  scale: 1;
-}
-#hero-section .tools-container li:nth-of-type(12) {
-  top: 33svh;
-  right: 50svw;
-  rotate: 25deg;
   scale: 1;
 }/*# sourceMappingURL=App.css.map */

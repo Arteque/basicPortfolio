@@ -99,18 +99,18 @@
             </div>
             <div class="tools-container">
                 <ul class="tools">
-                   <li><img src="./_Public/Media/Tools/ps-icon.svg" alt=""></li>
-                   <li><img src="./_Public/Media/Tools/ai-icon.svg" alt=""></li>
-                   <li><img src="./_Public/Media/Tools/xd-icon.svg" alt=""></li>
-                   <li><img src="./_Public/Media/Tools/id-icon.svg" alt=""></li>
-                   <li><img src="./_Public/Media/Tools/html-icon.svg" alt=""></li>
-                   <li><img src="./_Public/Media/Tools/css-icon.svg" alt=""></li>
-                   <li><img src="./_Public/Media/Tools/js-icon.svg" alt=""></li>
-                   <!-- <li><img src="./_Public/Media/Tools/github-icon.svg" alt=""></li> -->
-                   <li><img src="./_Public/Media/Tools/de-icon.svg" alt=""></li>
-                   <li><img src="./_Public/Media/Tools/eng-icon.svg" alt=""></li>
-                   <li><img src="./_Public/Media/Tools/mar-icon.svg" alt=""></li>
-                   <li><img src="./_Public/Media/Tools/fr-icon.svg" alt=""></li>
+                   <li><img src="./_Public/Media/Tools/ps-icon.svg" alt="" data-blur="2"></li>
+                   <li><img src="./_Public/Media/Tools/ai-icon.svg" alt="" data-blur="1"></li>
+                   <li><img src="./_Public/Media/Tools/xd-icon.svg" alt="" data-blur="0"></li>
+                   <li><img src="./_Public/Media/Tools/id-icon.svg" alt="" data-blur="2"></li>
+                   <li><img src="./_Public/Media/Tools/html-icon.svg" alt="" data-blur="1"></li>
+                   <li><img src="./_Public/Media/Tools/css-icon.svg" alt="" data-blur="1"></li>
+                   <li><img src="./_Public/Media/Tools/js-icon.svg" alt="" data-blur="0"></li>
+                   <!-- <li><img src="./_Public/Media/Tools/github-icon.svg" alt="" data-blur="5"></li> -->
+                   <li><img src="./_Public/Media/Tools/de-icon.svg" alt="" data-blur="0.5"></li>
+                   <li><img src="./_Public/Media/Tools/eng-icon.svg" alt="" data-blur="0.8"></li>
+                   <li><img src="./_Public/Media/Tools/mar-icon.svg" alt="" data-blur="1"></li>
+                   <li><img src="./_Public/Media/Tools/fr-icon.svg" alt="" data-blur="2"></li>
                 </ul>
             </div>
            
@@ -128,10 +128,18 @@
         //SpotLight Hero Section
         const lightBackground = document.querySelector(".light-background")
 
+
+        //tools
+        
+        const tools = document.querySelector(".tools-container")
+        const toolsItems = [...tools.querySelectorAll("img")]
+
         let mouse = {
             x:undefined,
             y:undefined
         }
+
+
         document.addEventListener("mousemove", (e) => {
             
             window.setTimeout(() => {
@@ -141,46 +149,46 @@
                       left:${mouse.x}px;
                       top: ${mouse.y}px;
                       `
-            }, 200)
-
+            }, 50)
+            
         })
 
-        //tools
-        /*
-        const tools = document.querySelector(".tools-container")
-        const toolsItems = [...tools.querySelectorAll("img")]
+        document.addEventListener("mousemove", () => {
+            // if(window.innerWidth >= 800){
+                toolsItems.forEach(item => {
+                    let itemBox = item.getBoundingClientRect()
+                    let itemX = itemBox.x
+                    let itemY = itemBox.y
 
-        const imgScale = () => {return Math.random() * 3 + 1}
-        let imgScaleTransition = () => {return Math.floor(Math.random() * 20 + 1)} 
-        const shadowX = imgScale()
-        const shadowY = Math.floor(Math.random()*10)
-        const shadowZ = 0 + imgScale()
-        const imgBlur = imgScale() / 5
-        const imgZIndex = imgScale()
+                item.style.cssText = `transform:translate(${mouse.x / (-100)}%, ${mouse.y / (-100)}%);
+                                        filter:drop-shadow(${(itemX - mouse.x) / 50}px ${(itemY - mouse.y) / 50}px ${((itemX + mouse.x) + (itemY+ mouse.y)) / 450}px #00000060)
+                                        blur(${((itemX+itemY)-(mouse.x + mouse.y))/500 }px)
+                                        ;
 
-        function setup(item){
-            item.style.cssText = `transition: all ${imgScaleTransition()}s cubic-bezier(0, 1.2, 0.5, 1);
-                                  transition-delay:1s;
-                                  z-index:${Math.floor(imgScale()) * 100};
-                                  rotate: ${Math.floor(Math.random() * 360 - 100)}deg;
-                                  scale:${Math.floor(imgScale())};
-                                  left:${Math.random() * window.innerWidth}px;
-                                  bottom:${Math.random() * window.innerHeight + 100}px;
-                                  filter: drop-shadow(${shadowX * 2}px ${shadowY * 2}px ${shadowZ * 2}px #00000080) blur(${imgBlur}px);
-                                //   opacity:1;
+                `
+                })
 
-            `
-        }
+            // }
+        })
 
-        toolsItems.forEach(item => {
+        
 
-            setup(item)
 
-           
+        //Burger Menu
+        let burgerContainer = document.querySelector("#main-header .burger-container")
+        let openStatus = false
+        burgerContainer.addEventListener("click", (e) => {
+            e.preventDefault()
+            openStatus = !openStatus
+            if(openStatus){
+                document.body.dataset.menu="menu-open"
+            }else{
+                document.body.dataset.menu=""
+            }
         })
 
 
-       */
+       
 
     </script>
 </body>

@@ -43,6 +43,11 @@ ul[class] {
   max-width: 1790px;
   margin-inline: auto;
 }
+@media (min-width: 900px) {
+  .wrapper {
+    padding-inline: 0;
+  }
+}
 
 .light-background {
   position: absolute;
@@ -273,7 +278,7 @@ body[data-menu=menu-open] #main-header .burger-container span:nth-of-type(3) {
   display: block;
   text-transform: uppercase;
   color: var(--sub-100);
-  font-size: 2.5rem;
+  font-size: clamp(2.5rem, 10vw + 1px, 180px);
   word-break: break-all;
   width: 100%;
 }

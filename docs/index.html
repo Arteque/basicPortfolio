@@ -9,9 +9,9 @@
 </head>
 <body>
     <!--
-    <p class="gyroscope">Test</p>
-    <p class="gyroscope-info">Test</p>
--->
+        <p class="gyroscope">Test</p>
+        <p class="gyroscope-info">Test</p>
+    -->
     <header id="main-header">
         <div class="light-background"></div>
         <div class="wrapper">
@@ -137,7 +137,7 @@
     <script>
         //SpotLight Hero Section
         const lightBackground = document.querySelector(".light-background")
-
+        const portfolioImg = document.querySelector(".media img")
 
         //tools
         
@@ -186,8 +186,8 @@
             let y = e.beta
             let x = e.gamma
             console.log(invLerp(20,80,y))
-            document.querySelector(".media img").style.cssText = `transform: rotate3d(0, 1, 0, -${x/3}deg);
-                                                                  filter:drop-shadow(${x/2}px -${(invLerp(0,70,y)*50)}px ${Math.abs(x/2)}px rgba(0,0,0,${Math.abs(x/70)}));                                         
+            portfolioImg.style.cssText = `transform: rotate3d(0, 1, 0, ${x/2}deg);
+                                          filter:drop-shadow(${x/2}px -5px ${Math.abs(x/2)}px rgba(0,0,0,${Math.abs(x/100)}));                                         
             `
             
            

@@ -8,6 +8,10 @@
     <title>Document</title>
 </head>
 <body>
+    <!--
+    <p class="gyroscope">Test</p>
+    <p class="gyroscope-info">Test</p>
+-->
     <header id="main-header">
         <div class="light-background"></div>
         <div class="wrapper">
@@ -160,7 +164,7 @@
         })
 
         document.addEventListener("mousemove", () => {
-            // if(window.innerWidth >= 800){
+            if(window.innerWidth >= 800){
                 toolsItems.forEach(item => {
                     let itemBox = item.getBoundingClientRect()
                     let itemX = itemBox.x
@@ -174,9 +178,60 @@
                 `
                 })
 
-            // }
+            }
         })
 
+        console.log(lightBackground.offsetLeft)
+        console.log(lightBackground.offsetTop)
+
+        if(typeof Gyroscope === "function"){
+            let sensor = new Gyroscope({ frequency: 60 });
+         
+            let x, y, z, report
+            sensor.addEventListener("reading", () => {
+                report = "X-Axis: "+sensor.x +"<br>"
+                report += "Y-Axis: "+sensor.y +"<br>"
+                report += "Z-Axis: "+sensor.z +"<br>"
+
+                /*
+                let gyro =  document.querySelector(".gyroscope")
+                let info =  document.querySelector(".gyroscope-info")
+                gyro.innerHTML = `
+                
+                <span>X:</span>: ${report} <br>
+                
+                `
+                */
+                x = sensor.x * 100
+                y = sensor.y * 100
+                z = sensor.z * -33
+
+                toolsItems.forEach(item => {
+                    let itemBox = item.getBoundingClientRect()
+                    let itemX = itemBox.x
+                    let itemY = itemBox.y
+
+                item.style.cssText = `transform:translate(${(itemX + x) / 100}px, ${(itemY + y)/ 100}px) rotateX(${z}deg);
+                                      filter:drop-shadow(${(itemX + x)/10}px ${(itemY + y)/10}px 10px #00000080);
+                                      
+
+                `
+
+                lightBackground.style.cssText = `
+                      transform:translate(${x/50}px, ${y/50}px);
+                      `
+                })
+
+            }
+            )   
+            sensor.start()
+            sensor.onerror = errorHandler
+
+            function errorHandler(e){
+                //info.innerHTML = e.error.name, e.error.message
+                console.log(e.error.name, e.error.message)
+            }
+        }
         
 
 

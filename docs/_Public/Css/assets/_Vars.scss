@@ -1,9 +1,4 @@
-@mixin tab{
-    @media ( min-width:900px ){@content} 
-};
-@mixin xl{
-    @media ( min-width:1800px ){@content} 
-};
+
 :root{
     --heading: "aktiv-grotesk", sans-serif;
     --text: "pt-sans-pro", sans-serif;
@@ -15,5 +10,11 @@
     --light-100: #eeeeee;
     --light-200:#a8a8a8;
     --light-300:#686868;
+    --light-400:#242424;
 }
-
+@mixin tab{
+    @media ( min-width:900px ){@content} 
+};
+@mixin xl{
+    @media ( min-width:1800px ){@content} 
+};

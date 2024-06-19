@@ -1,4 +1,4 @@
-@use "./assets/Vars";
+@import "./assets/Vars";
 
 *{
     margin: 0;
@@ -26,7 +26,7 @@ ul[class]{
     max-width:1790px;
     margin-inline:auto;
     @include xl{
-        padding-inline: 0;
+        padding-inline:auto;
     }
 }
 .light-background{
@@ -58,6 +58,14 @@ ul[class]{
         display: flex;
         align-items:center;
         justify-content:space-between;
+        .logo-container{
+            padding: 5px;
+            width:50px;
+            aspect-ratio: 1;
+            svg{
+                width:100%;
+            }
+        }
         .main-nav{
             position:absolute;
             top: 10svh;
@@ -81,6 +89,21 @@ ul[class]{
                 padding-block: 0.2rem;
                 display: block;
                 transition: all 0.5s;
+            }
+            @include tab{
+                opacity: 1;
+                position:unset;
+                background-color:transparent;
+                transition: unset;
+                flex-flow:row;
+                gap: 1rem;
+                justify-content: flex-end;
+                pointer-events: auto;
+                a{
+                    font-size: 1rem;
+                    font-weight: normal;
+                    
+                }
             }
         }
         .burger-container{
@@ -107,6 +130,9 @@ ul[class]{
                     bottom: 0;
                     width:100%;
                 }
+            }
+            @include tab{
+                display: none;
             }
         }
 

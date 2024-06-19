@@ -9,6 +9,7 @@
   --light-100: #eeeeee;
   --light-200:#a8a8a8;
   --light-300:#686868;
+  --light-400:#242424;
 }
 
 * {
@@ -43,9 +44,9 @@ ul[class] {
   max-width: 1790px;
   margin-inline: auto;
 }
-@media (min-width: 900px) {
+@media (min-width: 1800px) {
   .wrapper {
-    padding-inline: 0;
+    padding-inline: auto;
   }
 }
 
@@ -84,6 +85,14 @@ ul[class] {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+#main-header .wrapper .logo-container {
+  padding: 5px;
+  width: 50px;
+  aspect-ratio: 1;
+}
+#main-header .wrapper .logo-container svg {
+  width: 100%;
+}
 #main-header .wrapper .main-nav {
   position: absolute;
   top: 10svh;
@@ -120,6 +129,28 @@ ul[class] {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
+@media (min-width: 900px) {
+  #main-header .wrapper .main-nav {
+    opacity: 1;
+    position: unset;
+    background-color: transparent;
+    -webkit-transition: unset;
+    transition: unset;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
+    gap: 1rem;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    pointer-events: auto;
+  }
+  #main-header .wrapper .main-nav a {
+    font-size: 1rem;
+    font-weight: normal;
+  }
+}
 #main-header .wrapper .burger-container {
   position: relative;
   width: 20px;
@@ -147,6 +178,11 @@ ul[class] {
 #main-header .wrapper .burger-container span:nth-of-type(3) {
   bottom: 0;
   width: 100%;
+}
+@media (min-width: 900px) {
+  #main-header .wrapper .burger-container {
+    display: none;
+  }
 }
 #main-header .wrapper .lang-container {
   position: fixed;
